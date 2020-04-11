@@ -10,21 +10,21 @@ public class QuantityMeasurementTest {
         Unit value1 = new Unit(0);
         Unit value2 = new Unit(0);
         boolean isEqual = this.measurement.compare(value1, value2);
-        Assert.assertEquals(true, isEqual);
+        Assert.assertTrue(isEqual);
     }
 
     @Test
     public void givenNullValue_WhenNotEqual_ReturnFalse() {
         Unit value1 = new Unit(0);
         boolean isEqual = this.measurement.compare(value1, null);
-        Assert.assertEquals(false, isEqual);
+        Assert.assertFalse(isEqual);
     }
 
     @Test
     public void givenSameReferance_WhenEqual_ReturnTrue() {
         Unit value1 = new Unit(0);
         boolean isEqual = this.measurement.compare(value1, value1);
-        Assert.assertEquals(true, isEqual);
+        Assert.assertTrue(isEqual);
     }
 
     @Test
@@ -32,7 +32,15 @@ public class QuantityMeasurementTest {
         Unit value1 = new Unit(0);
         Unit value2 = new Unit(0);
         boolean isEqual = this.measurement.compare(value1, value2);
-        Assert.assertEquals(true, isEqual);
+        Assert.assertTrue(isEqual);
+    }
+
+    @Test
+    public void givenSameFeetValue_WhenEqual_ReturnTrue() {
+        Unit value1 = new Unit(12);
+        Unit value2 = new Unit(12);
+        boolean isEqual = this.measurement.compare(value1, value2);
+        Assert.assertTrue(isEqual);
     }
 
 }
