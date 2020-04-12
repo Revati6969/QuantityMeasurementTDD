@@ -164,7 +164,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenInchAndInch_WhenGetAdded_ReturnResult() throws QuantityMeasurementException {
+    public void givenInchAndInch_WhenGetAdded_ReturnResult() {
         EqualityCheck value1 = new EqualityCheck(2.0, Unit.INCH);
         EqualityCheck value2 = new EqualityCheck(2.0, Unit.INCH);
         double result = measurement.addition(value1, value2);
@@ -172,7 +172,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenFeetAndInch_WhenGetAdded_ReturnResult() throws QuantityMeasurementException {
+    public void givenFeetAndInch_WhenGetAdded_ReturnResult() {
         EqualityCheck value1 = new EqualityCheck(1.0, Unit.FEET);
         EqualityCheck value2 = new EqualityCheck(2.0, Unit.INCH);
         double result = measurement.addition(value1, value2);
@@ -180,7 +180,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenFeetAndFeet_WhenGetAdded_ReturnResult() throws QuantityMeasurementException {
+    public void givenFeetAndFeet_WhenGetAdded_ReturnResult() {
         EqualityCheck value1 = new EqualityCheck(1.0, Unit.FEET);
         EqualityCheck value2 = new EqualityCheck(1.0, Unit.FEET);
         double result = measurement.addition(value1, value2);
@@ -188,10 +188,18 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenInchAndCentimeter_WhenGetAdded_ReturnResult() throws QuantityMeasurementException {
+    public void givenInchAndCentimeter_WhenGetAdded_ReturnResult() {
         EqualityCheck value1 = new EqualityCheck(2.0, Unit.INCH);
         EqualityCheck value2 = new EqualityCheck(2.5, Unit.CENTIMETER);
         double result = measurement.addition(value1, value2);
         Assert.assertEquals(3, result, 0);
+    }
+
+    @Test
+    public void givenGallonndLitres_WhenGetAdded_ReturnResult() {
+        EqualityCheck value1 = new EqualityCheck(1.0, Unit.GALLON);
+        EqualityCheck value2 = new EqualityCheck(3.78, Unit.LITRE);
+        double result = measurement.addition(value1, value2);
+        Assert.assertEquals(7.56, result, 0);
     }
 }
