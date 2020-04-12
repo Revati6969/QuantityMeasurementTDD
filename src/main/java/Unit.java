@@ -1,23 +1,19 @@
-import java.util.Objects;
 
-public class Unit {
-    public double unitValue;
+public enum Unit {
+    FEET(12),
+    INCH(1);
 
-    public Unit(double feetValue) {
-        this.unitValue = feetValue;
+    public final double value;
+
+    Unit(double value) {
+        this.value = value;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Unit that = (Unit) o;
-        return Double.compare(that.unitValue, unitValue) == 0;
+    public double getValue() {
+        return value;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(unitValue);
+    public double getConvertedValue() {
+        return value;
     }
-
 }
