@@ -48,4 +48,14 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(true, isEqual);
     }
 
+    @Test
+    public void givenInchNull_WhenNotEqual_ReturnFalse() {
+        EqualityCheck value1 = new EqualityCheck(1.0, Unit.INCH);
+        try {
+            boolean isEqual = measurement.compare(value1, null);
+        } catch (QuantityMeasurementException e) {
+            Assert.assertEquals(QuantityMeasurementException.ExceptionType.NULL_POINTER_EXCEPTION, e.type);
+        }
+    }
+
 }
