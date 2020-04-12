@@ -1,9 +1,9 @@
-public class EqualityCheck {
+public class QuantityMeasurementEqualityCheck {
 
     private final Unit unitValue;
     public double value;
 
-    public EqualityCheck(double value, Unit unitValue) {
+    public QuantityMeasurementEqualityCheck(double value, Unit unitValue) {
         this.value = value * unitValue.getValue();
         this.unitValue = unitValue;
     }
@@ -12,7 +12,7 @@ public class EqualityCheck {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        EqualityCheck that = (EqualityCheck) o;
+        QuantityMeasurementEqualityCheck that = (QuantityMeasurementEqualityCheck) o;
         return Double.compare(that.value, value) == 0;
     }
 }
