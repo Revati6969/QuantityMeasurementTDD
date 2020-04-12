@@ -154,4 +154,12 @@ public class QuantityMeasurementTest {
         boolean isEqual = measurement.compare(value1, value2);
         Assert.assertTrue(isEqual);
     }
+
+    @Test
+    public void givenInchAndCM_When2InchEqualsTo5cm_ReturnTrue() throws QuantityMeasurementException {
+        EqualityCheck value1 = new EqualityCheck(2.0, Unit.INCH);
+        EqualityCheck value2 = new EqualityCheck(5.0, Unit.CENTIMETER);
+        boolean isEqual = measurement.compare(value1, value2);
+        Assert.assertTrue(isEqual);
+    }
 }
