@@ -84,9 +84,17 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void given0FeetAnd0Inch_WhenEqual_ReturnTrue() throws QuantityMeasurementException {
+    public void givenFeetAndInch_WhenEqual_ReturnTrue() throws QuantityMeasurementException {
         EqualityCheck value1 = new EqualityCheck(0.0, Unit.FEET);
         EqualityCheck value2 = new EqualityCheck(0.0, Unit.INCH);
+        boolean isEqual = measurement.compare(value1, value2);
+        Assert.assertEquals(true, isEqual);
+    }
+
+    @Test
+    public void givenFeetAndInch_WhenResultEqual_ReturnTrue() throws QuantityMeasurementException {
+        EqualityCheck value1 = new EqualityCheck(1.0, Unit.FEET);
+        EqualityCheck value2 = new EqualityCheck(12.0, Unit.INCH);
         boolean isEqual = measurement.compare(value1, value2);
         Assert.assertEquals(true, isEqual);
     }
