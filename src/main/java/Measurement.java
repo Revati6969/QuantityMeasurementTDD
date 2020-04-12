@@ -7,4 +7,8 @@ public class Measurement {
         return value1.equals(value2);
     }
 
+
+    public double addition(EqualityCheck value1, EqualityCheck value2) {
+        return value1.getValue()+value2.getValue();
+    }
 }
