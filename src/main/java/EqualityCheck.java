@@ -1,7 +1,7 @@
-
 public class EqualityCheck {
-    public double value;
+
     private final Unit unitValue;
+    public double value;
 
     public EqualityCheck(double value, Unit unitValue) {
         this.value = value * unitValue.getValue();

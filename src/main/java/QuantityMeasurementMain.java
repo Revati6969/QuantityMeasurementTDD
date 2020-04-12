@@ -1,5 +1,4 @@
-
-public class Measurement {
+public class QuantityMeasurementMain {
 
     public boolean compare(EqualityCheck value1, EqualityCheck value2) throws QuantityMeasurementException {
         if (value1 == null || value2 == null)
@@ -9,6 +8,6 @@ public class Measurement {
 
 
     public double addition(EqualityCheck value1, EqualityCheck value2) {
-        return value1.value+value2.value;
+        return value1.value + value2.value;
     }
 }

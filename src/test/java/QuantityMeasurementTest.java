@@ -3,7 +3,7 @@ import org.junit.Test;
 
 public class QuantityMeasurementTest {
 
-    Measurement measurement = new Measurement();
+    QuantityMeasurementMain measurement = new QuantityMeasurementMain();
 
     @Test
     public void givenFeetValue_WhenEqual_ReturnTrue() throws QuantityMeasurementException {
