@@ -122,4 +122,12 @@ public class QuantityMeasurementTest {
         boolean isEqual = measurement.compare(value1, value2);
         Assert.assertFalse(isEqual);
     }
+
+    @Test
+    public void givenInchAndYard_When1InchNotEqualsTo1Yard_ReturnFalse() throws QuantityMeasurementException {
+        EqualityCheck value1 = new EqualityCheck(1.0, Unit.INCH);
+        EqualityCheck value2 = new EqualityCheck(1.0, Unit.YARD);
+        boolean isEqual = measurement.compare(value1, value2);
+        Assert.assertFalse(isEqual);
+    }
 }
