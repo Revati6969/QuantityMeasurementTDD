@@ -7,9 +7,9 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenFeetValue_WhenEqual_ReturnTrue() throws QuantityMeasurementException {
-       EqualityCheck value1 = new EqualityCheck(1.0, Unit.FEET);
-       EqualityCheck value2 = new EqualityCheck(1.0, Unit.FEET);
-       boolean isEqual = measurement.compare(value1, value2);
+        EqualityCheck value1 = new EqualityCheck(1.0, Unit.FEET);
+        EqualityCheck value2 = new EqualityCheck(1.0, Unit.FEET);
+        boolean isEqual = measurement.compare(value1, value2);
         Assert.assertTrue(isEqual);
     }
 
@@ -17,7 +17,7 @@ public class QuantityMeasurementTest {
     public void givenNullValue_WhenNotEqual_ThrowException() {
         EqualityCheck value1 = new EqualityCheck(1.0, Unit.FEET);
         try {
-           boolean isEqual = measurement.compare(value1, null);
+            boolean isEqual = measurement.compare(value1, null);
         } catch (QuantityMeasurementException e) {
             Assert.assertEquals(QuantityMeasurementException.ExceptionType.NULL_POINTER_EXCEPTION, e.type);
         }
