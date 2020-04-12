@@ -1,6 +1,6 @@
 
 public class EqualityCheck {
-    private final double value;
+    public double value;
     private final Unit unitValue;
 
     public EqualityCheck(double value, Unit unitValue) {
