@@ -210,4 +210,12 @@ public class QuantityMeasurementTest {
         double result = measurement.addition(value1, value2);
         Assert.assertEquals(2.0, result, 0);
     }
+
+    @Test
+    public void givenKgAndGm_WhenEqual_ReturnTrue() throws QuantityMeasurementException {
+        EqualityCheck value1 = new EqualityCheck(1.0, Unit.KILOGRAMS);
+        EqualityCheck value2 = new EqualityCheck(1000.0, Unit.GRAMS);
+        boolean isEqual = measurement.compare(value1, value2);
+        Assert.assertTrue(isEqual);
+    }
 }
