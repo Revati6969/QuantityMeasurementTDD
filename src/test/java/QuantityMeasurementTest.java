@@ -65,4 +65,14 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(true, isEqual);
     }
 
+    @Test
+    public void givenSameInchType_WhenEqual_ReturnTrue() throws QuantityMeasurementException {
+        double inch1 = 1.0;
+        double inch2 = 1.0;
+        EqualityCheck value1 = new EqualityCheck(inch1, Unit.INCH);
+        EqualityCheck value2 = new EqualityCheck(inch2, Unit.INCH);
+        boolean isEqual = measurement.compare(value1, value2);
+        Assert.assertEquals(true, isEqual);
+    }
+
 }
