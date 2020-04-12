@@ -10,11 +10,11 @@ public class QuantityMeasurementTest {
        EqualityCheck value1 = new EqualityCheck(1.0, Unit.FEET);
        EqualityCheck value2 = new EqualityCheck(1.0, Unit.FEET);
        boolean isEqual = measurement.compare(value1, value2);
-       Assert.assertEquals(true, isEqual);
+        Assert.assertTrue(isEqual);
     }
 
     @Test
-    public void givenNullValue_WhenNotEqual_ReturnFalse() {
+    public void givenNullValue_WhenNotEqual_ThrowException() {
         EqualityCheck value1 = new EqualityCheck(1.0, Unit.FEET);
         try {
            boolean isEqual = measurement.compare(value1, null);
@@ -27,7 +27,7 @@ public class QuantityMeasurementTest {
     public void givenSameReferance_WhenEqual_ReturnTrue() throws QuantityMeasurementException {
         EqualityCheck value1 = new EqualityCheck(1.0, Unit.FEET);
         boolean isEqual = measurement.compare(value1, value1);
-        Assert.assertEquals(true, isEqual);
+        Assert.assertTrue(isEqual);
     }
 
     @Test
@@ -37,7 +37,7 @@ public class QuantityMeasurementTest {
         EqualityCheck value1 = new EqualityCheck(feet1, Unit.FEET);
         EqualityCheck value2 = new EqualityCheck(feet2, Unit.FEET);
         boolean isEqual = measurement.compare(value1, value2);
-        Assert.assertEquals(true, isEqual);
+        Assert.assertTrue(isEqual);
     }
 
     @Test
@@ -45,7 +45,7 @@ public class QuantityMeasurementTest {
         EqualityCheck value1 = new EqualityCheck(12.0, Unit.FEET);
         EqualityCheck value2 = new EqualityCheck(12.0, Unit.FEET);
         boolean isEqual = measurement.compare(value1, value2);
-        Assert.assertEquals(true, isEqual);
+        Assert.assertTrue(isEqual);
     }
 
     @Test
@@ -62,7 +62,7 @@ public class QuantityMeasurementTest {
     public void givenSameInchReferance_WhenEqual_ReturnTrue() throws QuantityMeasurementException {
         EqualityCheck value1 = new EqualityCheck(1.0, Unit.INCH);
         boolean isEqual = measurement.compare(value1, value1);
-        Assert.assertEquals(true, isEqual);
+        Assert.assertTrue(isEqual);
     }
 
     @Test
@@ -72,7 +72,7 @@ public class QuantityMeasurementTest {
         EqualityCheck value1 = new EqualityCheck(inch1, Unit.INCH);
         EqualityCheck value2 = new EqualityCheck(inch2, Unit.INCH);
         boolean isEqual = measurement.compare(value1, value2);
-        Assert.assertEquals(true, isEqual);
+        Assert.assertTrue(isEqual);
     }
 
     @Test
@@ -80,7 +80,7 @@ public class QuantityMeasurementTest {
         EqualityCheck value1 = new EqualityCheck(12.0, Unit.INCH);
         EqualityCheck value2 = new EqualityCheck(12.0, Unit.INCH);
         boolean isEqual = measurement.compare(value1, value2);
-        Assert.assertEquals(true, isEqual);
+        Assert.assertTrue(isEqual);
     }
 
     @Test
@@ -88,7 +88,15 @@ public class QuantityMeasurementTest {
         EqualityCheck value1 = new EqualityCheck(0.0, Unit.FEET);
         EqualityCheck value2 = new EqualityCheck(0.0, Unit.INCH);
         boolean isEqual = measurement.compare(value1, value2);
-        Assert.assertEquals(true, isEqual);
+        Assert.assertTrue(isEqual);
+    }
+
+    @Test
+    public void givenFeetAndInch_WhenNotEqual_ReturnFalse() throws QuantityMeasurementException {
+        EqualityCheck value1 = new EqualityCheck(1.0, Unit.FEET);
+        EqualityCheck value2 = new EqualityCheck(1.0, Unit.INCH);
+        boolean isEqual = measurement.compare(value1, value2);
+        Assert.assertFalse(isEqual);
     }
 
     @Test
@@ -96,7 +104,15 @@ public class QuantityMeasurementTest {
         EqualityCheck value1 = new EqualityCheck(1.0, Unit.FEET);
         EqualityCheck value2 = new EqualityCheck(12.0, Unit.INCH);
         boolean isEqual = measurement.compare(value1, value2);
-        Assert.assertEquals(true, isEqual);
+        Assert.assertTrue(isEqual);
     }
 
+
+    @Test
+    public void givenFeetAndYard_When3FeetEqualsToYard_ReturnTrue() throws QuantityMeasurementException {
+        EqualityCheck value1 = new EqualityCheck(3.0, Unit.FEET);
+        EqualityCheck value2 = new EqualityCheck(1.0, Unit.YARD);
+        boolean isEqual = measurement.compare(value1, value2);
+        Assert.assertTrue(isEqual);
+    }
 }
