@@ -9,6 +9,6 @@ public class Measurement {
 
 
     public double addition(EqualityCheck value1, EqualityCheck value2) {
-        return value1.getValue()+value2.getValue();
+        return value1.value+value2.value;
     }
 }
