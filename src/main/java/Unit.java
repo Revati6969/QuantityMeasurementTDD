@@ -4,17 +4,9 @@ public enum Unit {
     INCH(1),
     YARD(36);
 
-    public final double value;
+    private final double value;
 
-    Unit(double value) {
-        this.value = value;
-    }
+    Unit(double value) { this.value = value; }
 
-    public double getValue() {
-        return value;
-    }
-
-    public double getConvertedValue() {
-        return value;
-    }
+    public double getValue() { return value; }
 }

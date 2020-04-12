@@ -4,7 +4,7 @@ public class EqualityCheck {
     private final Unit unitValue;
 
     public EqualityCheck(double value, Unit unitValue) {
-        this.value = value * unitValue.getConvertedValue();
+        this.value = value * unitValue.getValue();
         this.unitValue = unitValue;
     }
 

@@ -107,7 +107,6 @@ public class QuantityMeasurementTest {
         Assert.assertTrue(isEqual);
     }
 
-
     @Test
     public void givenFeetAndYard_When3FeetEqualsToYard_ReturnTrue() throws QuantityMeasurementException {
         EqualityCheck value1 = new EqualityCheck(3.0, Unit.FEET);
