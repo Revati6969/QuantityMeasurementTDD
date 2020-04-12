@@ -186,4 +186,12 @@ public class QuantityMeasurementTest {
         double result = measurement.addition(value1, value2);
         Assert.assertEquals(24.0, result, 0);
     }
+
+    @Test
+    public void givenInchAndCentimeter_WhenGetAdded_ReturnResult() throws QuantityMeasurementException {
+        EqualityCheck value1 = new EqualityCheck(2.0, Unit.INCH);
+        EqualityCheck value2 = new EqualityCheck(2.5, Unit.CENTIMETER);
+        double result = measurement.addition(value1, value2);
+        Assert.assertEquals(3, result, 0);
+    }
 }
