@@ -1,12 +1,10 @@
-import java.util.Objects;
 
 public class Measurement {
 
-    public double unitValue;
-
-    public boolean compare(Unit value1, Unit value2) {
-        if(value1.equals(value2))
-            return true;
-        return false;
+    public boolean compare(EqualityCheck value1, EqualityCheck value2) throws QuantityMeasurementException {
+        if (value1 == null || value2 == null)
+            throw new QuantityMeasurementException(QuantityMeasurementException.ExceptionType.NULL_POINTER_EXCEPTION, "Null Object");
+        return value1.equals(value2);
     }
+
 }
