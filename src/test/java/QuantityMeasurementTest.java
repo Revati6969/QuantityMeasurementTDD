@@ -226,4 +226,12 @@ public class QuantityMeasurementTest {
         boolean isEqual = measurement.compare(value1, value2);
         Assert.assertTrue(isEqual);
     }
+
+    @Test
+    public void givenTonneAndGm_WhenEqual_ReturnTrue() {
+        EqualityCheck value1 = new EqualityCheck(1.0, Unit.TONNE);
+        EqualityCheck value2 = new EqualityCheck(1000.0, Unit.GRAMS);
+        double result = measurement.addition(value1, value2);
+        Assert.assertEquals(1001, result, 0);
+    }
 }
