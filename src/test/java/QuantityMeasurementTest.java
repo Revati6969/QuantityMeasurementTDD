@@ -141,8 +141,16 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenInchAndYard_When36InchEqualsTo1Yard_ReturnTrue() throws QuantityMeasurementException {
+        EqualityCheck value2 = new EqualityCheck(1.0, Unit.YARD);
+        EqualityCheck value1 = new EqualityCheck(36.0, Unit.INCH);
+        boolean isEqual = measurement.compare(value1, value2);
+        Assert.assertTrue(isEqual);
+    }
+
+    @Test
+    public void givenFeetAndYard_When1YardEqualsTo3Feet_ReturnTrue() throws QuantityMeasurementException {
         EqualityCheck value1 = new EqualityCheck(1.0, Unit.YARD);
-        EqualityCheck value2 = new EqualityCheck(36.0, Unit.INCH);
+        EqualityCheck value2 = new EqualityCheck(3.0, Unit.FEET);
         boolean isEqual = measurement.compare(value1, value2);
         Assert.assertTrue(isEqual);
     }
