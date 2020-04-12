@@ -178,4 +178,12 @@ public class QuantityMeasurementTest {
         double result = measurement.addition(value1, value2);
         Assert.assertEquals(14.0, result, 0);
     }
+
+    @Test
+    public void givenFeetAndFeet_WhenGetAdded_ReturnResult() throws QuantityMeasurementException {
+        EqualityCheck value1 = new EqualityCheck(1.0, Unit.FEET);
+        EqualityCheck value2 = new EqualityCheck(1.0, Unit.FEET);
+        double result = measurement.addition(value1, value2);
+        Assert.assertEquals(24.0, result, 0);
+    }
 }
