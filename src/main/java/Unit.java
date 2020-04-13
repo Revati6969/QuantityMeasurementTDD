@@ -14,9 +14,7 @@ public enum Unit {
     FAHRENHEIT(1),
     CELSIUS( 2.12);
 
-    private final double value;
+    public final double value;
 
     Unit(double value) { this.value = value; }
-
-    public double getValue() { return value; }
 }

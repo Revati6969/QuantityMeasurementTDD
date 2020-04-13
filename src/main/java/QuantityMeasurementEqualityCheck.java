@@ -1,10 +1,12 @@
+import java.util.Objects;
+
 public class QuantityMeasurementEqualityCheck {
 
     private final Unit unitValue;
     public double value;
 
     public QuantityMeasurementEqualityCheck(double value, Unit unitValue) {
-        this.value = value * unitValue.getValue();
+        this.value = value * unitValue.value;
         this.unitValue = unitValue;
     }
 
