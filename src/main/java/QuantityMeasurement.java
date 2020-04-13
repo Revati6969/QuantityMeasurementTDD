@@ -6,7 +6,6 @@ public class QuantityMeasurement {
         return value1.equals(value2);
     }
 
-
     public double addition(QuantityMeasurementEqualityCheck value1, QuantityMeasurementEqualityCheck value2) {
         return value1.value + value2.value;
     }

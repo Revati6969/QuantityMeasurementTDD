@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class QuantityMeasurementEqualityCheck {
 
     public double value;

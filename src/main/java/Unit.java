@@ -1,4 +1,3 @@
-
 public enum Unit {
 
     FEET(12),
@@ -12,9 +11,11 @@ public enum Unit {
     GRAMS(0.001),
     TONNE(1000),
     FAHRENHEIT(1),
-    CELSIUS( 2.12);
+    CELSIUS(2.12);
 
     public final double value;
 
-    Unit(double value) { this.value = value; }
+    Unit(double value) {
+        this.value = value;
+    }
 }
